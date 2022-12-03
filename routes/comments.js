@@ -8,7 +8,7 @@ router.post('/:postId', async(req,res,next) => {
       const {postId}=req.params
       const {user, password, content} = req.body;
       await Comment.create({postId, user, password, content})
-        const finder = await Comment.find({postId : postId})
+        const finder = await Post.find({_id : postId})
       if (finder.length===0){
         return res.status(400).send({ err: "해당 게시글이 존재하지 않습니다."})
       } else{
