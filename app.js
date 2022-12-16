@@ -20,18 +20,18 @@ mongoose
   });
 
 
-  app.use('/posts', postRouter);        // '/posts'로 시작하는 주소들에게 postRouter라고 하는 이름의 미들웨어를 적용하겠다.
-  app.use('/comments', commentRouter); //  '/commets'로 시작하는 주소들에게 commentRouter라고 하는 이름의 미들웨어를 적용하겠다. 
+app.use('/posts', postRouter);        // '/posts'로 시작하는 주소들에게 postRouter라고 하는 이름의 미들웨어를 적용하겠다.
+app.use('/comments', commentRouter); //  '/commets'로 시작하는 주소들에게 commentRouter라고 하는 이름의 미들웨어를 적용하겠다. 
 
-  // 404 에러처리
-  app.use(function (req, res, next) {
-    res.status(404).send({ what:'페이지'}) 
-  })
-  
-  // 500 에러처리
-  app.use(function (req, res, next) {
-    res.status(500).send({ message:'페이지에 접속할 수 없습니다.'})
-  })
+// 404 에러처리
+app.use(function (req, res, next) {
+  res.status(404).send({ what:'페이지'}) 
+})
+
+// 500 에러처리
+app.use(function (req, res, next) {
+  res.status(500).send({ message:'페이지에 접속할 수 없습니다.'})
+})
 
 app.listen(port, () => {
     console.log(port, '포트로 서버가 열렸습니다.');
