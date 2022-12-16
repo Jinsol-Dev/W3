@@ -1,6 +1,6 @@
 //express 연결, 포트 연결, api연결 및 확인, DB연결
 const express = require('express');  
-const app = express();            //express라는 모듈 자체를 호출. express라는 모듈 자체는 app 이라는 객체를 리턴해줌.
+const app = express();                   //express라는 모듈 자체를 호출. express라는 모듈 자체는 app 이라는 객체를 리턴해줌.
 const port = 3006;
 const postRouter = require('./routes/posts.js');
 const commentRouter = require('./routes/comments.js');
